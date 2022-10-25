@@ -47,7 +47,9 @@ const Boardshelf = (props) => {
         fetchData();
     }, []);
 
- 
+    // in a useEffect setup the polling with window.setInterval
+    // and use the cleanup function to clear it when content changes
+
     const handleLoanBook = (book) => {
         return () =>
             LibraryClient.loanReturnBook(book.id, props.username, book.borrowed)
