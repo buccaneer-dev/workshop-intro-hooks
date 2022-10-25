@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import LibraryClient from "../library_client/LibraryClient";
 
+const POLLING_INTERVAL = 5000;
+
 const BookCard = (props) => {
     return (
         <div className="card card-book">
@@ -47,8 +49,11 @@ const Boardshelf = (props) => {
         fetchData();
     }, []);
 
-    // in a useEffect setup the polling with window.setInterval
-    // and use the cleanup function to clear it when content changes
+    useEffect(() => {
+        // using interval instead of timeout to demonstrate cleanup function
+        const timer = window.setInterval(() => fetchData(), POLLING_INTERVAL);
+        return () => window.clearInterval(timer);
+    }, [content]);
 
     const handleLoanBook = (book) => {
         return () =>
