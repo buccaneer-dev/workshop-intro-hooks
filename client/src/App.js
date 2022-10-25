@@ -15,12 +15,15 @@ const defaultState = {
 };
 
 const App = () => {
+    // store in the state a new UserCtx() instead of a defaultState
     const [user, setUser] = useState(defaultState);
 
     useEffect(() => {
         LibraryClient.getCurrentUser()
             .then((user) => {
                 if (user) {
+                    // create a new context with the received user with createUserCtx
+                    // and store it in thje state
                     setUser(user);
                 }
             })
@@ -32,6 +35,9 @@ const App = () => {
         setUser(defaultState);
     };
 
+    // replace the div with a UserContext.Provider
+    // remove all props passed to the components
+    // except for the NavBar logOut
     return (
         <div>
             <NavBar

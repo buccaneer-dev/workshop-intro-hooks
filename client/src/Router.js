@@ -7,7 +7,9 @@ import Register from "./components/Register";
 import Boardshelf from "./components/Bookshelf";
 import Admin from "./components/Admin";
 
+// this component won't need any more props
 const Router = (props) => {
+    // remove all props passed to Boardshelf
     return (
         <Routes>
             <Route path="/" element={<Home />} />

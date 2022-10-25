@@ -5,6 +5,9 @@ import LibraryClient from "../library_client/LibraryClient";
 const POLLING_INTERVAL = 5000;
 
 const BookCard = (props) => {
+    // use the hook useContext initialized with UserContext
+
+    // replace props.username, props.canDelete with methods provided by the context
     return (
         <div className="card card-book">
             <div className="card-horizontal">
@@ -42,6 +45,7 @@ const BookCard = (props) => {
 
 const Boardshelf = (props) => {
     const [content, setContent] = useState([]);
+    // use the hook useContext initialized with UserContext
 
     const fetchData = () => LibraryClient.getAllBooks().then(setContent).catch(console.error);
 
@@ -55,6 +59,7 @@ const Boardshelf = (props) => {
         return () => window.clearInterval(timer);
     }, [content]);
 
+    // replace props.username with methods provided by the context
     const handleLoanBook = (book) => {
         return () =>
             LibraryClient.loanReturnBook(book.id, props.username, book.borrowed)
@@ -66,6 +71,7 @@ const Boardshelf = (props) => {
         return () => LibraryClient.removeBook(book.id).then(fetchData).catch(console.error);
     };
 
+    // stop passing props.canDelete, props.username to BookCard
     return (
         <>
             <div className="jumbotron">

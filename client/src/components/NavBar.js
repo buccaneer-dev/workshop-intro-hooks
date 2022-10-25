@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = (props) => {
+    // use the hook useContext initialized with UserContext
+
+    // replace props.isAdmin, props.isLogged, props.profileName
+    // with methots provided by the context
     return (
         <nav className="navbar navbar-expand navbar-dark bg-dark">
             <Link to={"/"} className="navbar-brand">
