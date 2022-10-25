@@ -16,12 +16,12 @@ npm run start
 ```
 
 
-NB: During the workshop a demo server will be available at the IP address hard-coded in the library client, if you are *reading from the future* replace that string to http://localhost:8080/ follow the **setup server step**
+NB: During the workshop a demo server will be available at the IP address hard-coded in the library client, if you are *reading from the future* replace that string to http://localhost:8080/ and follow the **setup server step**
 
 
 ## Exercises
 
-Tho follow along with the exercises checkout the different branches and complete the tasks writen in the comments
+To follow along with the exercises checkout the different branches and complete the tasks of the latest commit described in the comments
 
 ### Part 1 - useState
 
@@ -60,6 +60,7 @@ git checkout part-5-final-extra
 
 ## Setup server
 
+Running a local server (optional for the Workshop)
 
 ```
 
@@ -70,7 +71,11 @@ npm i
 npm run dev
 ```
 
+Configure the API URL to localhost in *./client/src/library_client/LibraryClient.js*
 
+```
+const API_URL = "http://localhost:8080/";
+```
 ## I want more
 
 We recorded a webinar where we give an Introduction to React Hooks and delve into the difference between using class-based and functional components
