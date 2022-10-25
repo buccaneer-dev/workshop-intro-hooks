@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
-const NavBar = (props) => {
-    // use the hook useContext initialized with UserContext
+import { UserContext } from "../context/UserContext";
 
-    // replace props.isAdmin, props.isLogged, props.profileName
-    // with methots provided by the context
+const NavBar = (props) => {
+    const userCtx = useContext(UserContext);
+
     return (
         <nav className="navbar navbar-expand navbar-dark bg-dark">
             <Link to={"/"} className="navbar-brand">
@@ -18,7 +18,7 @@ const NavBar = (props) => {
                     </Link>
                 </li>
 
-                {props.isAdmin && (
+                {userCtx.hasPermission("books:create") && (
                     <li className="nav-item">
                         <Link to={"/admin"} className="nav-link">
                             Add Book
@@ -26,7 +26,7 @@ const NavBar = (props) => {
                     </li>
                 )}
 
-                {props.isLogged && (
+                {userCtx.isLogged() && (
                     <li className="nav-item">
                         <Link to={"/books"} className="nav-link">
                             Bookshelf
@@ -35,11 +35,11 @@ const NavBar = (props) => {
                 )}
             </div>
 
-            {props.isLogged ? (
+            {userCtx.isLogged() ? (
                 <div className="navbar-nav ml-auto">
                     <li className="nav-item">
                         <a href="/" className="nav-link">
-                            {props.profileName}
+                            {userCtx.getProfileName()}
                         </a>
                     </li>
                     <li className="nav-item">

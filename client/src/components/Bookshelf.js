@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 import LibraryClient from "../library_client/LibraryClient";
 
 const POLLING_INTERVAL = 5000;
 
 const BookCard = (props) => {
-    // use the hook useContext initialized with UserContext
-
-    // replace props.username, props.canDelete with methods provided by the context
+    const userCtx = useContext(UserContext);
     return (
         <div className="card card-book">
             <div className="card-horizontal">
@@ -25,17 +24,17 @@ const BookCard = (props) => {
                     Status: {props.borrowed ? `loaned by ${props.borrowed}` : "available"}
                 </small>
                 <div className="btns-loan">
-                    {props.canDelete && (
+                    {userCtx.hasPermission("books:delete") && (
                         <button className="btn btn-danger" onClick={props.handleRemove}>
                             Remove
                         </button>
                     )}
                     <button
                         className="btn btn-primary"
-                        disabled={props.borrowed !== "" && props.borrowed !== props.username}
+                        disabled={props.borrowed !== "" && props.borrowed !== userCtx.getUsername()}
                         onClick={props.handleLoan}
                     >
-                        {props.borrowed === props.username ? "Return" : "Borrow"}
+                        {props.borrowed === userCtx.getUsername() ? "Return" : "Borrow"}
                     </button>
                 </div>
             </div>
@@ -43,9 +42,9 @@ const BookCard = (props) => {
     );
 };
 
-const Boardshelf = (props) => {
+const Boardshelf = () => {
     const [content, setContent] = useState([]);
-    // use the hook useContext initialized with UserContext
+    const userCtx = useContext(UserContext);
 
     const fetchData = () => LibraryClient.getAllBooks().then(setContent).catch(console.error);
 
@@ -59,10 +58,9 @@ const Boardshelf = (props) => {
         return () => window.clearInterval(timer);
     }, [content]);
 
-    // replace props.username with methods provided by the context
     const handleLoanBook = (book) => {
         return () =>
-            LibraryClient.loanReturnBook(book.id, props.username, book.borrowed)
+            LibraryClient.loanReturnBook(book.id, userCtx.getUsername(), book.borrowed)
                 .then(fetchData)
                 .catch(console.error);
     };
@@ -71,7 +69,6 @@ const Boardshelf = (props) => {
         return () => LibraryClient.removeBook(book.id).then(fetchData).catch(console.error);
     };
 
-    // stop passing props.canDelete, props.username to BookCard
     return (
         <>
             <div className="jumbotron">
@@ -86,9 +83,7 @@ const Boardshelf = (props) => {
                             key={book.id}
                             {...book}
                             handleLoan={handleLoanBook(book)}
-                            handleRemove={handleRemoveBook}
-                            canDelete={props.canDelete}
-                            username={props.username}
+                            handleRemove={handleRemoveBook(book)}
                         />
                     ))}
             </div>

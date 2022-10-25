@@ -4,27 +4,19 @@ import "./App.css";
 
 import LibraryClient from "./library_client/LibraryClient";
 
+import { UserCtx, UserContext, createUserCtx } from "./context/UserContext";
+
 import NavBar from "./components/NavBar";
 import Router from "./Router";
 
-const defaultState = {
-    userId: "",
-    name: "",
-    username: "",
-    permissions: [],
-};
-
 const App = () => {
-    // store in the state a new UserCtx() instead of a defaultState
-    const [user, setUser] = useState(defaultState);
+    const [userCtx, setUserCtx] = useState(new UserCtx());
 
     useEffect(() => {
         LibraryClient.getCurrentUser()
             .then((user) => {
                 if (user) {
-                    // create a new context with the received user with createUserCtx
-                    // and store it in thje state
-                    setUser(user);
+                    setUserCtx(createUserCtx(user));
                 }
             })
             .catch(console.warn);
@@ -32,22 +24,16 @@ const App = () => {
 
     const handleLogOut = () => {
         LibraryClient.logout();
-        setUser(defaultState);
+        setUserCtx(new UserCtx());
     };
 
-    // replace the div with a UserContext.Provider
-    // remove all props passed to the components
-    // except for the NavBar logOut
     return (
-        <div>
-            <NavBar
-                logOut={handleLogOut}
-                isAdmin={user.permissions.includes("books:create")}
-                isLogged={user.username !== ""}
-                profileName={user.name}
-            />
-            <Router canDelete={user.permissions.includes("books:delete")} username={user.username} />
-        </div>
+        <UserContext.Provider value={userCtx}>
+            <div>
+                <NavBar logOut={handleLogOut} />
+                <Router />
+            </div>
+        </UserContext.Provider>
     );
 };
 
