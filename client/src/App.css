@@ -1,0 +1,61 @@
+label {
+  display: block;
+  margin-top: 12px;
+}
+
+.card-container.card-form.card-user {
+  max-width: 380px !important;
+  padding: 40px 40px;
+}
+
+.card-container.card-form.card-add {
+  max-width: 600px !important;
+  padding: 40px 40px;
+}
+
+.card-form {
+  background-color: #f7f7f7;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card-book {
+  margin-top: 50px;
+}
+
+.card-img {
+  width: 200px;
+  padding: 3px;
+}
+
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.btns-loan {
+  float: right;
+  min-width: 100px;
+}
+
+.btns-loan button {
+  margin: 0px 5px;
+  width: 90px;
+}
