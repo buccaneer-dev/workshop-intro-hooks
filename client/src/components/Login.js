@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
@@ -22,28 +22,26 @@ const Login = () => {
     const form = useRef();
     const checkBtn = useRef();
 
-    const username = "";
-    const password = "";
-    const loading = false;
-    const message = "";
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
 
     const onChangeUsername = (e) => {
         const username = e.target.value;
-        console.log(username);
-        // store in the state the new username
+        setUsername(username);
     };
 
     const onChangePassword = (e) => {
         const password = e.target.value;
-        console.log(password);
-        // store in the state the new password
+        setPassword(password);
     };
 
     const handleLogin = (e) => {
         e.preventDefault();
 
-        // reset the message state to ''
-        // set the loading state to true
+        setMessage("");
+        setLoading(true);
 
         form.current.validateAll();
 
@@ -59,12 +57,12 @@ const Login = () => {
                         error.message ||
                         error.toString();
 
-                    // reset the message state to resMessage
-                    // set the loading state to false
+                    setLoading(false);
+                    setMessage(resMessage);
                 },
             );
         } else {
-            // set the loading state to false
+            setLoading(false);
         }
     };
 
