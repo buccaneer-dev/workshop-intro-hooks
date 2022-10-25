@@ -30,15 +30,20 @@ const Login = () => {
     const onChangeUsername = (e) => {
         const username = e.target.value;
         console.log(username);
+        // store in the state the new username
     };
 
     const onChangePassword = (e) => {
         const password = e.target.value;
         console.log(password);
+        // store in the state the new password
     };
 
     const handleLogin = (e) => {
         e.preventDefault();
+
+        // reset the message state to ''
+        // set the loading state to true
 
         form.current.validateAll();
 
@@ -53,9 +58,13 @@ const Login = () => {
                         (error.response && error.response.data && error.response.data.message) ||
                         error.message ||
                         error.toString();
+
+                    // reset the message state to resMessage
+                    // set the loading state to false
                 },
             );
         } else {
+            // set the loading state to false
         }
     };
 
