@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
+import useInterval from "../hooks/useInterval";
+
 import LibraryClient from "../library_client/LibraryClient";
 
 const POLLING_INTERVAL = 5000;
@@ -52,11 +54,7 @@ const Boardshelf = () => {
         fetchData();
     }, []);
 
-    useEffect(() => {
-        // using interval instead of timeout to demonstrate cleanup function
-        const timer = window.setInterval(() => fetchData(), POLLING_INTERVAL);
-        return () => window.clearInterval(timer);
-    }, [content]);
+    useInterval(() => fetchData(), POLLING_INTERVAL);
 
     const handleLoanBook = (book) => {
         return () =>
