@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import LibraryClient from "../library_client/LibraryClient";
 
 const BookCard = (props) => {
     return (
@@ -37,24 +39,25 @@ const BookCard = (props) => {
 };
 
 const Boardshelf = (props) => {
-    // use useState hook to hold content
-    const content = [];
+    const [content, setContent] = useState([]);
 
-    const fetchData = () => {
-        // fetch all the books then store data into the state
-        console.log(content);
-    };
+    const fetchData = () => LibraryClient.getAllBooks().then(setContent).catch(console.error);
 
-    // execute the fetchData when the component is mounted
-    // using useEffect with the empty dependency list array
+    useEffect(() => {
+        fetchData();
+    }, []);
 
+ 
     const handleLoanBook = (book) => {
-        // send request to toggle borrow/return book
-        // then re-fetch data
-        return () => console.log(book);
+        return () =>
+            LibraryClient.loanReturnBook(book.id, props.username, book.borrowed)
+                .then(fetchData)
+                .catch(console.error);
     };
 
-    const handleRemoveBook = () => null;
+    const handleRemoveBook = (book) => {
+        return () => LibraryClient.removeBook(book.id).then(fetchData).catch(console.error);
+    };
 
     return (
         <>
