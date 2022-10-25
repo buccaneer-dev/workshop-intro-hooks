@@ -1,0 +1,92 @@
+[
+    {
+        "id": "1",
+        "title": "Hands-on Rust!",
+        "subtitle": "Effective Learning through 2D Game Development and Play",
+        "author": "Herbert Wolverson",
+        "link": "https://m.media-amazon.com/images/I/415YYUyOZgL._SX415_BO1,204,203,200_.jpg",
+        "borrowed": "",
+        "description": "Rust is an exciting new programming language combining the power of C with memory safety, fearless concurrency, and productivity boosters - and what better way to learn than by making games. Each chapter in this book presents hands-on, practical projects ranging from 'Hello, World' to building a full dungeon crawler game. With this book, you'll learn game development skills applicable to other engines, including Unity and Unreal."
+    },
+    {
+        "id": "2",
+        "title": "Storytelling With Data",
+        "subtitle": "A Data Visualization Guide for Business Professionals",
+        "author": "Cole Nussbaumer Knaflic",
+        "link": "https://m.media-amazon.com/images/I/71EN1l+uQKL.jpg",
+        "borrowed": "",
+        "description": "Don't simply show your data—tell a story with it!  Storytelling with Data teaches you the fundamentals of data visualization and how to communicate effectively with data. You'll discover the power of storytelling and the way to make data a pivotal point in your story. The lessons in this illuminative text are grounded in theory, but made accessible through numerous real-world examples—ready for immediate application to your next graph or presentation."
+    },
+    {
+        "id": "3",
+        "title": "Fundamentals of Software Architecture",
+        "subtitle": "An Engineering Approach",
+        "author": "Neal Ford & Mark Richards",
+        "link": "https://m.media-amazon.com/images/I/51-RoANBXoL._SX379_BO1,204,203,200_.jpg",
+        "borrowed": "",
+        "description": "Salary surveys worldwide regularly place software architect in the top 10 best jobs, yet no real guide exists to help developers become architects. Until now. This book provides the first comprehensive overview of software architecture’s many aspects. Aspiring and existing architects alike will examine architectural characteristics, architectural patterns, component determination, diagramming and presenting architecture, evolutionary architecture, and many other topics."
+    },
+    {
+        "id": "4",
+        "title": "Building Event-Driven Microservices",
+        "subtitle": "Leveraging Organizational Data at Scale",
+        "author": "Adam Bellemare",
+        "link": "https://m.media-amazon.com/images/I/81iqfwOmyGL.jpg",
+        "borrowed": "",
+        "description": "Organizations today often struggle to balance business requirements with ever-increasing volumes of data. Additionally, the demand for leveraging large-scale, real-time data is growing rapidly among the most competitive digital industries. Conventional system architectures may not be up to the task. With this practical guide, you’ll learn how to leverage large-scale data usage across the business units in your organization using the principles of event-driven microservices."
+    },
+    {
+        "id": "5",
+        "title": "Clojure for the Brave and True",
+        "subtitle": "Learn the Ultimate Language and Become a Better Programmer",
+        "author": "Daniel Higginbotham",
+        "link": "https://m.media-amazon.com/images/I/91wuHgXXnnL.jpg",
+        "borrowed": "",
+        "description": "For weeks, months—nay!—from the very moment you were born, you’ve felt it calling to you. At long last you’ll be united with the programming language you’ve been longing for: Clojure!"
+    },
+    {
+        "id": "6",
+        "title": "Web Development with Clojure", 
+        "subtitle": "Build Large, Maintainable Web Applications Interactively", 
+        "author": "Dmitri Sotnikov and Scot Brown",
+        "description": "Today, developers are increasingly adopting Clojure as a web-development platform. See for yourself what makes Clojure so desirable, as you create a series of web apps of growing complexity, exploring the full process of web development using a modern functional language. This fully updated third edition reveals the changes in the rapidly evolving Clojure ecosystem and provides a practical, complete walkthrough of the Clojure web-stack.",
+        "borrowed": "",
+        "link": "https://m.media-amazon.com/images/I/51fP2JgHAyL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg"
+    },
+    {
+        "id": "7",
+        "title": "Land of Lisp",
+        "subtitle": "Learn to Program in Lisp, One Game at a Time!", 
+        "author": "Conrad Barski, M.D.", 
+        "description": "Lisp has been hailed as the world’s most powerful programming language, but its cryptic syntax and academic reputation can be enough to scare off even experienced programmers. Those dark days are finally over—Land of Lisp brings the power of functional programming to the people!",
+        "borrowed": "",
+        "link": "https://m.media-amazon.com/images/I/51LScX2eBGL._SX376_BO1,204,203,200_.jpg"
+    },
+    {
+        "id": "8",
+        "title": "Functional-Light JavaScript",
+        "subtitle": "Pragmatic, Balanced FP in JavaScript", 
+        "author": "Kyle Simpson", 
+        "description": "Functional-Light JavaScript is a balanced, pragmatic exploration of Functional Programming in JavaScript.Functional Programming (FP) is an incredibly powerful paradigm for structuring code that yields more robust, verifiable, and readable programs. If you've ever tried to learn FP but struggled with terms like 'monad', mathematical concepts like category theory, or symbols like (lambda), you're not alone.Functional-Light programming distills the most vital aspects of FP—function purity, value immutability, composition, and more!—down to approachable JavaScript patterns.",
+        "borrowed": "",
+        "link": "https://m.media-amazon.com/images/I/41TUMocVeVL._SX383_BO1,204,203,200_.jpg"
+    },
+    {
+        "id": "9",
+        "title": "Artificial Intelligence for Games",
+        "subtitle": "", 
+        "author": "Ian Millington, John Funge", 
+        "description": "Creating robust artificial intelligence is one of the greatest challenges for game developers, yet the commercial success of a game is often dependent upon the quality of the AI. In this book, Ian Millington brings extensive professional experience to the problem of improving the quality of AI in games. He describes numerous examples from real games and explores the underlying ideas through detailed case studies. He goes further to introduce many techniques little used by developers today.",
+        "borrowed": "",
+        "link": "https://m.media-amazon.com/images/I/41nHEw6aESL._SX351_BO1,204,203,200_.jpg"
+    },
+    {
+        "id": "10",
+        "title": "Lifelong Kindergarten",
+        "subtitle": "Cultivating Creativity through Projects, Passion, Peers, and Play", 
+        "author": "Mitchel Resnick, John Funge", 
+        "description": "How lessons from kindergarten can help everyone develop the creative thinking skills needed to thrive in today's society. In kindergartens these days, children spend more time with math worksheets and phonics flashcards than building blocks and finger paint. Kindergarten is becoming more like the rest of school. In Lifelong Kindergarten, learning expert Mitchel Resnick argues for exactly the opposite: the rest of school (even the rest of life) should be more like kindergarten. To thrive in today's fast-changing world, people of all ages must learn to think and act creatively—and the best way to do that is by focusing more on imagining, creating, playing, sharing, and reflecting, just as children do in traditional kindergartens.",
+        "borrowed": "",
+        "link": "https://m.media-amazon.com/images/I/51GGK7C+tUL._SX352_BO1,204,203,200_.jpg"
+    }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "2",
+    "username": "admin",
+    "name": "Admin",
+    "password": "$2b$10$3sl1O2bDobpOPOrqtHgPXefcsO67sHyCDdSp62cCnWp5B3ed8rK4q",
+    "permissions": [
+      "books:delete",
+      "books:create",
+      "books:read"
+    ]
+  },
+  {
+    "id": "1",
+    "username": "ventrosky",
+    "name": "Salvatore",
+    "password": "$2b$10$xjf8G6dle.Mqm9lkkpl.nuV0BnmXXz5TsVnGBhyqpLckQehFSTaKe",
+    "permissions": [
+      "books:create",
+      "books:read"
+    ]
+  },
+  {
+    "id": "3",
+    "username": "joe",
+    "name": "JoeDever",
+    "password": "$2b$10$fRDGvxF37l68KVYd8U0G.OM4MfhnER..SdL7HEg7QfTwBYECuGHq2",
+    "permissions": [
+      "books:read"
+    ]
+  }
+]
